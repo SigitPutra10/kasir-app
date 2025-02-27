@@ -18,7 +18,7 @@
                                     class="hide-menu">Pembelian</span></a></li>
                         @if (Auth::user()->role == 'admin')
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                    href="icon-material.html" aria-expanded="false"><i class="mdi mdi-account-network"></i><span
+                                    href="{{ route('users.index') }}" aria-expanded="false"><i class="mdi mdi-account-network"></i><span
                                         class="hide-menu">User</span></a></li>
                         @endif
                     </ul>

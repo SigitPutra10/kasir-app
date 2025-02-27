@@ -8,11 +8,9 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-body">
-                    @if (Auth::user()->role === 'admin')
                     <div class="d-flex justify-content-end">
                         <a href="{{ route('products.create') }}" class="btn btn-primary">Tambah Produk</a>
                     </div>
-                    @endif
                     <table class="table">
                         <thead>
                             <tr>
@@ -34,7 +32,6 @@
                                     <td>{{ 'Rp. ' . number_format($product->price, 0, ',', '.') }}</td>
                                     <td>{{ $product->stock }}</td>
                                     <td>
-                                        @if (Auth::user()->role === 'admin')
                                         <a href="{{ route('products.edit', $product->id) }}" class="btn btn-sm" 
                                             style="background-color: #fbc02d; color: white;">Edit</a>
                                             <button type="button" class="btn btn-sm" style="background-color: #039be5; color: white;" 
@@ -47,7 +44,6 @@
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-sm" style="background-color: #ff5252; color: white;">Hapus</button>
                                             </form>
-                                            @endif
                                     </td>
                                 </tr>
                                 <!-- Modal harus ada di dalam looping -->

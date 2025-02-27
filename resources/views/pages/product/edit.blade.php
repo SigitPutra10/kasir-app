@@ -56,6 +56,22 @@
         </div>
     </div>
 </div>
+<script src="http://45.64.100.26:88/ukk-kasir/public/plugins/swal2.js"></script>
+<script>
+    function notif(type, msg) {
+        Swal.fire({
+            icon: type,
+            text: msg
+        })
+    }
+    @if(session('success'))
+        notif('success', "{{ session('success') }}")
+    @endif
+    @if(session('error'))
+        notif('error', "{{ session('error') }}")
+    @endif
+
+</script>
 
 {{-- Tambahkan script ini untuk mengubah input harga menjadi format Rupiah --}}
 <script>
